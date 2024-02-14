@@ -2407,7 +2407,7 @@ const PDFViewerApplication = {
     validateFileURL(file);
     console.log('TOKEN', token);
     console.log('FILE', file);
-    // console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1])));  
+    console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1])));  
     const fileInput = appConfig.openFileInput;
     fileInput.value = null;
     fileInput.addEventListener("change", function (evt) {
