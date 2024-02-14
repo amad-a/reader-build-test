@@ -2405,9 +2405,18 @@ const PDFViewerApplication = {
     let token = params.get("token");
     file = params.get("file") ?? _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.get("defaultUrl");
     validateFileURL(file);
-    console.log('TOKEN', token);
+    // console.log('TOKEN', token);
     console.log('FILE', file);
-    console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1])));  
+    // console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1]))); 
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    let parsedPayload = JSON.parse(jsonPayload);
+    console.log("PARSED PAYLOAD", parsedPayload); 
+
     const fileInput = appConfig.openFileInput;
     fileInput.value = null;
     fileInput.addEventListener("change", function (evt) {
