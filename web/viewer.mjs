@@ -2415,7 +2415,7 @@ const PDFViewerApplication = {
 
     if (parsedPayload.email === "amad@khajistan.com") {
       console.log('email match');
-      file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/${file}`
+      file = `${process.env.SERVER_SOURCE}${file}`
     } else {
       file = 'https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/khajistan-reader.pdf';
     }
