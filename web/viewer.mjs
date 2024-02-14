@@ -2404,6 +2404,8 @@ const PDFViewerApplication = {
     console.log('PARAMS', params)
     let token = params.get("token");
     file = params.get("file") ?? _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.get("defaultUrl");
+
+    file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/${file}`
     validateFileURL(file);
     // console.log('TOKEN', token);
     console.log('FILE', file);
