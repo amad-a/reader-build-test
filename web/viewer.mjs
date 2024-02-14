@@ -2391,7 +2391,7 @@ const PDFViewerApplication = {
     let cookie = document.cookie;
     
     // JSON.parse(atob(document.cookie.split('.')[1])) || null;
-    console.log('decoded', document);
+    console.log('decoded', cookie);
     this.preferences = this.externalServices.createPreferences();
     await this.initialize(config);
     const {
