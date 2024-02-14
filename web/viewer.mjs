@@ -2405,11 +2405,6 @@ const PDFViewerApplication = {
     let token = params.get("token");
     file = params.get("file") ?? _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.get("defaultUrl");
 
-    file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/${file}`
-    validateFileURL(file);
-    // console.log('TOKEN', token);
-    console.log('FILE', file);
-    // console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1]))); 
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
@@ -2417,6 +2412,22 @@ const PDFViewerApplication = {
     }).join(''));
 
     let parsedPayload = JSON.parse(jsonPayload);
+
+    if (parsedPayload.email === "amad@khajistan.com") {
+      console.log('email match');
+      file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/${file}`
+    } else {
+      file = 'https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/khajistan-reader.pdf';
+    }
+
+    
+    validateFileURL(file);
+    // console.log('TOKEN', token);
+    console.log('FILE', file);
+    // console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1]))); 
+
+
+    
     console.log("PARSED PAYLOAD", parsedPayload); 
 
     const fileInput = appConfig.openFileInput;
