@@ -2401,8 +2401,12 @@ const PDFViewerApplication = {
     let file;
     const queryString = document.location.search.substring(1);
     const params = (0,_ui_utils_js__WEBPACK_IMPORTED_MODULE_0__.parseQueryString)(queryString);
+    token = params.get("token");
     file = params.get("file") ?? _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.get("defaultUrl");
     validateFileURL(file);
+    console.log('TOKEN', token);
+    console.log('FILE', file);
+    console.log('DECODED', JSON.parse(atob(document.cookie.split('.')[1])));
     const fileInput = appConfig.openFileInput;
     fileInput.value = null;
     fileInput.addEventListener("change", function (evt) {
