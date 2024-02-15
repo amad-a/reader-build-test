@@ -2413,9 +2413,26 @@ const PDFViewerApplication = {
 
     let parsedPayload = JSON.parse(jsonPayload);
 
-    if (parsedPayload.email === "amad@khajistan.com") {
+    const allowedList = [
+      'saad@khajistan.com',
+      'amad@khajistan.com',
+      'Sharokllc@gmail.com',
+      'Suroosh@vice.com',
+      'madiha.tahir@yale.edu',
+      'jfpierce@pobox.upenn.edu',
+      'ellen.ambrosone@princeton.edu',
+      'dschlein@princeton.edu',
+      'c.ryanperkins@stanford.edu',
+      'adavari21@gmail.com',
+      'guy.burak@nyu.edu',
+      'sean.swanick@duke.edu',
+    ]; 
+  
+    let allowed = allowedList.includes(parsedPayload.email);
+
+    if (allowed) {
       console.log('email match');
-      file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/${file}`
+      file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/pdfs-c6f04243-0aae-4d1e-a560-02420e59a442/${file}`
     } else {
       file = 'https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/khajistan-reader.pdf';
     }
