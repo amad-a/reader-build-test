@@ -2423,6 +2423,7 @@ const PDFViewerApplication = {
       'adavari21@gmail.com',
       'guy.burak@nyu.edu',
       'sean.swanick@duke.edu',
+      'zulqarnain.bardc@gmail.com'
     ]; 
   
     let allowed = allowedList.includes(parsedPayload.email);
