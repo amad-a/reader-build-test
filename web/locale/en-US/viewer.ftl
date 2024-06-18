@@ -27,6 +27,8 @@ pdfjs-page-of-pages = ({ $pageNumber } of { $pagesCount })
 
 pdfjs-zoom-out-button =
     .title = Zoom Out
+pdfjs-change-wallpaper-button =
+    .title = Change Wallpaper
 pdfjs-zoom-out-button-label = Zoom Out
 pdfjs-zoom-in-button =
     .title = Zoom In

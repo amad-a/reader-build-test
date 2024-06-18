@@ -36,6 +36,32 @@ See https://github.com/adobe-type-tools/cmap-resources
   const _supabase = createClient('https://qojysegeddztsxdmhjfb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvanlzZWdlZGR6dHN4ZG1oamZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzc1MjM5MjQsImV4cCI6MTk5MzA5OTkyNH0.iz8hhr1TYYLWk9HyI0b_yxqlzGJgyuXKsBO_2_kuQ94');
 
   console.log('Supabase Instance: ', _supabase);
+
+  let randomWallpaper = Math.floor(Math.random() * 7);
+
+  if (sessionStorage.getItem('wallpaper') === null) {
+      console.log('bleh')
+      let wallpaperString = randomWallpaper.toString();
+      console.log('')
+      document.body.id = 'b' + wallpaperString;
+      sessionStorage.setItem('wallpaper', wallpaperString);
+      console.log('changed body', document.body)
+    
+    } else {
+      document.body.id =
+        'b' + sessionStorage.getItem('wallpaper');
+      console.log('changed body', document.body)
+    }
+
+    function setWallpaper() {
+      const currentWallpaper = sessionStorage.getItem('wallpaper');
+      let num = parseInt(currentWallpaper) || 0;
+      num += 1;
+      if (num > 14) num = 0;
+      document.body.id = 'b' + num.toString();
+      console.log('bb', document.body); 
+      sessionStorage.setItem('wallpaper', num.toString());
+    }
 </script>
 
     <link rel="stylesheet" href="viewer.css">
@@ -43,7 +69,7 @@ See https://github.com/adobe-type-tools/cmap-resources
   <script src="viewer.mjs" type="module"></script>
   </head>
 
-  <body tabindex="1">
+  <body tabindex="1" id="b1">
     <div id="outerContainer">
 
       <div id="sidebarContainer">
@@ -268,6 +294,9 @@ See https://github.com/adobe-type-tools/cmap-resources
               <div id="toolbarViewerLeft">
                 <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="pdfjs-toggle-sidebar-button" aria-expanded="false" aria-controls="sidebarContainer">
                   <span data-l10n-id="pdfjs-toggle-sidebar-button-label">Toggle Sidebar</span>
+                </button>
+                <button id="changeWallpaper" class="toolbarButton" title="Change Wallpaper" tabindex="21" onClick="setWallpaper()">
+                  <span data-l10n-id="pdfjs-zoom-out-button-label">Change Wallpaper</span>
                 </button>
                 <div class="toolbarButtonSpacer"></div>
                 <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="pdfjs-findbar-button" aria-expanded="false" aria-controls="findbar">
@@ -500,5 +529,14 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
 
     <input type="file" id="fileInput" class="hidden">
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (!urlParams.size > 0 && !(urlParams.get('file') && urlParams.get('token'))) {
+        console.log('index');
+        let content = '<body><iframe src="landing-page.html"/></body>';
+        document.body.innerHTML = content;
+        console.log('body', document.body)
+      }
+    </script>
   </body>
 </html>

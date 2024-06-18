@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khajistan Reader</title>
+</head>
+<style>
+  @font-face {
+    font-family: "Swiss";
+    src: url(public/swiss.woff2);
+  }
+
+  body {
+    background-color: #357420;
+    font-family: "Swiss";
+    color: rgb(0, 0, 0);
+  }
+
+  a {
+    color: yellow;
+  }
+
+  a:hover {
+    color: blue
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .horizontal-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .welcome-text {
+    font-size: 50px;
+    padding: 10px 20% 0px 20%;
+    font-style: italic;
+    font-weight: bold;
+
+  }
+
+  .welcome-text-lower {
+    font-size: 20px;
+    width: 300px;
+    padding-top: 000px;
+
+  }
+
+  #mag-image {
+    z-index: -1;
+    margin-top: 0px;
+    width: 300px; 
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="welcome-text">
+      KHAJISTAN READER
+    </div>   
+    <div class="horizontal-container">
+      <img id="mag-image" width="100px" src="public/mag-gif-images/1.jpg"></img> 
+      <div class="welcome-text-lower">
+        Welcome to Khajistan Reader. To use the reader:<br>
+        1. <a href="https://archive.khajistan.com/profile">Log in or create an account</a> on Khajistan Archive<br>
+        2. <a href="https://archive.khajistan.com/profile">Browse collections</a> on Khajistan Archive<br>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    // Array to store image filenames
+    var imageFiles = [
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+      "7.jpg",
+      "8.jpg",
+      "9.jpg"
+    ];
+
+    var currentIndex = 0; // Current index in the imageFiles array
+
+    function changeImage() {
+      // Get the image element
+      var img = document.getElementById("mag-image");
+      // Set the src attribute to the next image filename
+      img.src = 'public/mag-gif-images/' + imageFiles[currentIndex];
+      // Increment the index
+      currentIndex = (currentIndex + 1) % imageFiles.length;
+    }
+
+    // Call changeImage initially to start the cycling
+    changeImage();
+
+    // Set an interval to call changeImage every second (1000 milliseconds)
+    setInterval(changeImage, 1250);
+  </script>
+
+</body>
+
+</html>
