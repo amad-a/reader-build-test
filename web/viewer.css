@@ -2524,10 +2524,14 @@ body{
   width:100%;
 }
 
-body{
+body {
   background-color:var(--body-bg-color);
   scrollbar-color:var(--scrollbar-color) var(--scrollbar-bg-color);
 }
+
+
+
+
 
 .hidden,
 [hidden]{
@@ -3884,3 +3888,74 @@ dialog :link{
 #toolbarViewerRight {
   display:none !important;  
 }
+
+#b0 {
+  background-image: url('public/tiles/bgbag.gif');
+  background-repeat: repeat;
+}
+
+#b1 {
+  background-image: url('public/tiles/bgbag.gif');
+  background-repeat: repeat;
+}
+#b2 {
+  background-image: url('public/tiles/bgbfnet.gif');
+  background-repeat: repeat;
+}
+#b3 {
+  background-image: url('public/tiles/bgbubbles2.gif');
+  background-repeat: repeat;
+}
+#b4 {
+  background-image: url('public/tiles/bgroseheart.gif');
+  background-repeat: repeat;
+}
+#b5 {
+  background-image: url('public/tiles/pup1.gif');
+  background-repeat: repeat;
+}
+#b6 {
+  background-image: url('public/tiles/bgwhirl.gif');
+  background-repeat: repeat;
+}
+#b7 {
+  background-image: url('public/tiles/palestine-youth-union-tile-bg.jpg');
+  background-repeat: repeat;
+}
+#b8 {
+  background-image: url('public/tiles/people-of-palestine-tile-bg.gif');
+  background-repeat: repeat;
+}
+#b9 {
+  background-image: url('public/tiles/zuhair-tile-bg.gif');
+  background-repeat: repeat;
+  background-size: 20%;
+}
+#b10 {
+  background-image: url('public/tiles/rani-tile-bg.jpg');
+  background-repeat: repeat;
+}
+#b11 {
+  background-image: url('public/tiles/samia-halaby-1-tile-bg.gif');
+  background-repeat: repeat;
+}
+#b12 {
+  background-image: url('public/tiles/sharabati-tile-bg.JPG');
+  background-repeat: repeat;
+}
+#b13 {
+  background-image: url('public/tiles/fruit.gif');
+  background-repeat: repeat;
+}
+#b14 {
+  background-image: url('public/tiles/ocean.gif');
+  background-repeat: repeat;
+  background-size: 5%;
+} 
+#b15 {
+  background-color: green;
+} 
+
+#changeWallpaper {
+  color: #0060df;
+} 

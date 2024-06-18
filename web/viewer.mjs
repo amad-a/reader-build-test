@@ -2510,6 +2510,14 @@ const PDFViewerApplication = {
       scaleFactor
     });
   },
+  changeWallpaper() {
+    const currentWallpaper = sessionStorage.getItem('wallpaper');
+    let num = parseInt(currentWallpaper) || 0;
+    num += 1;
+    if (num > 14) num = 0;
+    document.documentElement.id = 'b' + num.toString();
+    sessionStorage.setItem('wallpaper', num.toString());
+  },
   zoomOut(steps, scaleFactor) {
     if (this.pdfViewer.isInPresentationMode) {
       return;
@@ -14808,6 +14816,7 @@ function getViewerConfiguration() {
       next: document.getElementById("next"),
       zoomIn: document.getElementById("zoomIn"),
       zoomOut: document.getElementById("zoomOut"),
+      changeWallpaper: document.getElementById("changeWallpaper"),
       viewFind: document.getElementById("viewFind"),
       print: document.getElementById("print"),
       editorFreeTextButton: document.getElementById("editorFreeText"),
