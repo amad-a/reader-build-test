@@ -2411,7 +2411,7 @@
     --sidebar-toolbar-bg-color:rgb(0, 0, 0);
     --toolbar-bg-color:rgb(0, 0, 0);
     --toolbar-border-color:rgb(12 12 13);
-    --button-hover-color:rgb(102 102 103);
+    --button-hover-color:rgb(0, 0, 0);
     --toggled-btn-color:rgb(255 255 255);
     --toggled-btn-bg-color:rgb(0 0 0 / 0.3);
     --toggled-hover-active-btn-color:rgb(0 0 0 / 0.4);
@@ -2590,7 +2590,7 @@ body {
 
 #sidebarContainer{
   position:absolute;
-  inset-block:32px 0;
+  inset-block: 43px 0;
   inset-inline-start:calc(-1 * var(--sidebar-width));
   width:var(--sidebar-width);
   visibility:hidden;
@@ -2601,6 +2601,7 @@ body {
   transition-property:inset-inline-start;
   transition-duration:var(--sidebar-transition-duration);
   transition-timing-function:var(--sidebar-transition-timing-function);
+  background-color: black;
 }
 
 #outerContainer:is(.sidebarMoving, .sidebarOpen) #sidebarContainer{
@@ -2666,6 +2667,7 @@ body {
   background-color:var(--sidebar-toolbar-bg-color);
   box-shadow:var(--toolbarSidebar-box-shadow);
   border-bottom:var(--toolbarSidebar-border-bottom);
+  display: none;
 }
 
 #sidebarResizer{
@@ -2689,7 +2691,10 @@ body {
 }
 
 #toolbarViewer{
-  height:32px;
+  height:38px;
+  background-color: #f3fb04;
+  padding-top: 5px;
+  border-bottom: 1px solid black;
 }
 
 #loadingBar{
@@ -3066,10 +3071,10 @@ body {
 
 .splitToolbarButtonSeparator{
   float:var(--inline-start);
-  margin:4px 0;
+  margin:4px 1px;
   width:1px;
   height:20px;
-  background-color:var(--separator-color);
+  background-color: black;
 }
 
 .toolbarButton,
@@ -3144,12 +3149,12 @@ body {
   min-width:inherit;
   height:28px;
   font-size:12px;
-  color:var(--main-color);
+  color: black;
   margin:0;
   padding-block:1px 2px;
   padding-inline:6px 38px;
-  border:none;
-  background-color:var(--dropdown-btn-bg-color);
+  border: 1px solid black;
+  background-color: #f3fb04;
 }
 .dropdownToolbarButton > select:is(:hover, :focus-visible){
   background-color:var(--button-hover-color);
@@ -3174,7 +3179,7 @@ body {
   height:16px;
 
   content:"";
-  background-color:var(--toolbar-icon-bg-color);
+  background-color: black;
   -webkit-mask-size:cover;
           mask-size:cover;
 }
@@ -3328,6 +3333,10 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"]{
           mask-image:var(--toolbarButton-search-icon);
 }
 
+#viewFind {
+  display: none;
+}
+
 .pdfSidebarNotification::after{
   position:absolute;
   display:inline-block;
@@ -3446,16 +3455,16 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"]{
 
 .toolbarField{
   padding:4px 7px;
-  margin:3px 0;
-  border-radius:2px;
+  margin: 2px 0;
   background-color:var(--field-bg-color);
   background-clip:padding-box;
-  border:1px solid var(--field-border-color);
+  border:1px solid black;
   box-shadow:none;
-  color:var(--field-color);
+  color: black;
   font-size:12px;
   line-height:16px;
   outline:none;
+  background-color: #f3fb04;
 }
 
 .toolbarField[type="checkbox"]{
@@ -3512,12 +3521,12 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"]{
   border-color:#0a84ff;
 }
 
-.toolbarLabel{
-  min-width:16px;
+.toolbarLabel {
+  min-width: 16px;
   padding:7px;
   margin:2px;
   border-radius:2px;
-  color:var(--main-color);
+  color: black;
   font-size:12px;
   line-height:14px;
   text-align:left;
@@ -3545,8 +3554,8 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"]{
           user-select:none;
 }
 #thumbnailView{
-  width:calc(100% - 60px);
-  padding:10px 30px 0;
+  width: calc(100% - 60px);
+  padding: 0px 30px 0;
 }
 
 #thumbnailView > a:is(:active, :focus){
@@ -3838,8 +3847,9 @@ dialog :link{
 @media all and (max-width: 900px){
   #toolbarViewerMiddle{
     display:table;
-    margin:auto;
-    left:auto;
+    margin: auto;
+    margin-right: 0px;
+    left: auto;
     position:inherit;
     transform:none;
   }

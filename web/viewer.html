@@ -37,21 +37,23 @@ See https://github.com/adobe-type-tools/cmap-resources
 
   console.log('Supabase Instance: ', _supabase);
 
-  let randomWallpaper = Math.floor(Math.random() * 7);
+  // let randomWallpaper = Math.floor(Math.random() * 7);
 
-  if (sessionStorage.getItem('wallpaper') === null) {
-      console.log('bleh')
-      let wallpaperString = randomWallpaper.toString();
-      console.log('')
-      document.body.id = 'b' + wallpaperString;
-      sessionStorage.setItem('wallpaper', wallpaperString);
-      console.log('changed body', document.body)
+  // if (sessionStorage.getItem('wallpaper') === null) {
+  //     console.log('bleh')
+  //     let wallpaperString = randomWallpaper.toString();
+  //     console.log('')
+  //     document.body.id = 'b' + wallpaperString;
+  //     sessionStorage.setItem('wallpaper', wallpaperString);
+  //     console.log('changed body', document.body)
     
-    } else {
-      document.body.id =
-        'b' + sessionStorage.getItem('wallpaper');
-      console.log('changed body', document.body)
-    }
+  //   } else {
+  //     document.body.id =
+  //       'b' + sessionStorage.getItem('wallpaper');
+  //     console.log('changed body', document.body)
+  //   }
+
+    document.body.id = 'b9';
 
     function setWallpaper() {
       const currentWallpaper = sessionStorage.getItem('wallpaper');
@@ -69,7 +71,7 @@ See https://github.com/adobe-type-tools/cmap-resources
   <script src="viewer.mjs" type="module"></script>
   </head>
 
-  <body tabindex="1" id="b1">
+  <body tabindex="1" id="b9">
     <div id="outerContainer">
 
       <div id="sidebarContainer">
@@ -295,9 +297,9 @@ See https://github.com/adobe-type-tools/cmap-resources
                 <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="pdfjs-toggle-sidebar-button" aria-expanded="false" aria-controls="sidebarContainer">
                   <span data-l10n-id="pdfjs-toggle-sidebar-button-label">Toggle Sidebar</span>
                 </button>
-                <button id="changeWallpaper" class="toolbarButton" title="Change Wallpaper" tabindex="21" onClick="setWallpaper()">
+                <!-- <button id="changeWallpaper" class="toolbarButton" title="Change Wallpaper" tabindex="21" onClick="setWallpaper()">
                   <span data-l10n-id="pdfjs-zoom-out-button-label">Change Wallpaper</span>
-                </button>
+                </button> -->
                 <div class="toolbarButtonSpacer"></div>
                 <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="pdfjs-findbar-button" aria-expanded="false" aria-controls="findbar">
                   <span data-l10n-id="pdfjs-findbar-button-label">Find</span>
