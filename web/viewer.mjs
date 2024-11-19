@@ -2399,34 +2399,34 @@ const PDFViewerApplication = {
     let file;
     const queryString = document.location.search.substring(1);
     const params = (0,_ui_utils_js__WEBPACK_IMPORTED_MODULE_0__.parseQueryString)(queryString);
-    let token = params.get("token");
+    // let token = params.get("token");
     file = params.get("file") ?? _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.get("defaultUrl");
 
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join('')) || null;
+    // var base64Url = token.split('.')[1];
+    // var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    // var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+    //     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    // }).join('')) || null;
 
-    let parsedPayload = JSON.parse(jsonPayload);
+    // let parsedPayload = JSON.parse(jsonPayload);
 
-    const allowedList = [
-      'saad@khajistan.com',
-      'amad@khajistan.com',
-      'Sharokllc@gmail.com',
-      'Suroosh@vice.com',
-      'madiha.tahir@yale.edu',
-      'jfpierce@pobox.upenn.edu',
-      'ellen.ambrosone@princeton.edu',
-      'dschlein@princeton.edu',
-      'c.ryanperkins@stanford.edu',
-      'adavari21@gmail.com',
-      'guy.burak@nyu.edu',
-      'sean.swanick@duke.edu',
-      'zulqarnain.bardc@gmail.com'
-    ]; 
+    // const allowedList = [
+    //   'saad@khajistan.com',
+    //   'amad@khajistan.com',
+    //   'Sharokllc@gmail.com',
+    //   'Suroosh@vice.com',
+    //   'madiha.tahir@yale.edu',
+    //   'jfpierce@pobox.upenn.edu',
+    //   'ellen.ambrosone@princeton.edu',
+    //   'dschlein@princeton.edu',
+    //   'c.ryanperkins@stanford.edu',
+    //   'adavari21@gmail.com',
+    //   'guy.burak@nyu.edu',
+    //   'sean.swanick@duke.edu',
+    //   'zulqarnain.bardc@gmail.com'
+    // ]; 
   
-    let allowed = allowedList.includes(parsedPayload.email);
+    // let allowed = allowedList.includes(parsedPayload.email);
 
     // if (allowed) {
     //   file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/pdfs-c6f04243-0aae-4d1e-a560-02420e59a442/${file}`
