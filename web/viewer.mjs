@@ -2434,6 +2434,8 @@ const PDFViewerApplication = {
       file = 'https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/test-pdfs/khajistan-reader.pdf';
     }
 
+    file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/pdfs-c6f04243-0aae-4d1e-a560-02420e59a442/${file}`
+
     
     validateFileURL(file);
     // console.log('TOKEN', token);
