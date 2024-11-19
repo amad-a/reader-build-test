@@ -2436,6 +2436,8 @@ const PDFViewerApplication = {
 
     file = `https://qojysegeddztsxdmhjfb.supabase.co/storage/v1/object/public/pdfs-c6f04243-0aae-4d1e-a560-02420e59a442/${file}`
 
+    console.log('FILE', file);
+
     
     validateFileURL(file);
     // console.log('TOKEN', token);
