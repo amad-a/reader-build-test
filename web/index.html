@@ -32,8 +32,8 @@ See https://github.com/adobe-type-tools/cmap-resources
 <script src="build/pdf.mjs" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const { createClient } = supabase
-  const _supabase = createClient(CLIENT_URL, CLIENT_KEY);
+  const { createClient } = supabase;
+  const _supabase = createClient(NEXT_PUBLIC_CLIENT_URL, NEXT_PUBLIC_CLIENT_KEY);
 
   console.log('Supabase Instance: ', _supabase);
 
